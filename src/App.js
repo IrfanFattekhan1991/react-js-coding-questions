@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import Child from "./components/Child";
+import { useState } from "react";
+import InputBoxes from "./components/InputBoxes";
 
 function App() {
+  const [dataFromChild, setDataFromChild] = useState(null);
+
+  const getDataFromChild = (data) => {
+    setDataFromChild(data);
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <Child onData={getDataFromChild} />
+      Parent Component-
+      {dataFromChild} */}
+      <InputBoxes />
     </div>
   );
 }
